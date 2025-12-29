@@ -20,7 +20,9 @@ dependencies = [
     "torch>=2.5.1",
     "torchvision",
     "tqdm",
+    "transformers>=4.57.3",
     "wandb",
+    "xformers>=0.0.32.post2",
 ]
 
 [project.optional-dependencies]

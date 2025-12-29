@@ -10,6 +10,7 @@ NeonSAT 벤치마크 - 위성 영상 정합 평가
 import os
 import glob
 import argparse
+import random
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
@@ -119,7 +120,10 @@ def run_benchmark(data_dir, model, device='cuda', limit=None, visualize=True, sa
     
     print(f"Found {len(k3_images)} image pairs.")
     if limit is not None:
-        print(f"Limiting to first {limit} pairs.")
+        print(f"Limiting to random {limit} pairs.")
+        # 공정한 비교를 위해 시드 고정
+        random.seed(42)
+        random.shuffle(k3_images)
         k3_images = k3_images[:limit]
     
     # 결과 저장용

@@ -1,0 +1,19 @@
+/gpfs/home/amkjy2545/ai/PyProjects/RoMa/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:182: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
+  return torch._C._cuda_getDeviceCount() > 0
+2025-12-03 17:35:12.791 | INFO     | romatch.models.model_zoo.roma_models:roma_model:67 - Using coarse resolution (560, 560), and upsample res (864, 864)
+Device: cpu
+Data directory: data_neonsat
+======================================================================
+
+======================================================================
+1. RoMa (Original - DINOv2 based)
+======================================================================
+Loading RoMa model...
+Model loaded in 6.09s
+
+Running benchmark...
+Found 702 image pairs.
+Limiting to first 5 pairs.
+Evaluating:   0%|          | 0/5 [00:00<?, ?it/s]Evaluating:  20%|██        | 1/5 [00:23<01:33, 23.41s/it]Evaluating:  40%|████      | 2/5 [00:46<01:09, 23.14s/it]Evaluating:  60%|██████    | 3/5 [01:09<00:46, 23.10s/it]Evaluating:  80%|████████  | 4/5 [01:32<00:23, 23.14s/it]Evaluating: 100%|██████████| 5/5 [01:55<00:00, 23.11s/it]Evaluating: 100%|██████████| 5/5 [01:55<00:00, 23.14s/it]
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc

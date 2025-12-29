@@ -1,0 +1,85 @@
+/gpfs/home/amkjy2545/ai/PyProjects/RoMa/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:182: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 802: system not yet initialized (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
+  return torch._C._cuda_getDeviceCount() > 0
+2025-12-03 17:08:25.534 | INFO     | romatch.models.model_zoo.roma_models:roma_model:67 - Using coarse resolution (560, 560), and upsample res (864, 864)
+Device: cpu
+Data directory: data_neonsat
+======================================================================
+
+======================================================================
+1. RoMa (Original - DINOv2 based)
+======================================================================
+Loading RoMa model...
+Model loaded in 5.99s
+
+Running benchmark...
+Found 702 image pairs.
+Limiting to first 5 pairs.
+Evaluating:   0%|          | 0/5 [00:00<?, ?it/s]Evaluating:  20%|██        | 1/5 [00:23<01:35, 23.82s/it]Evaluating:  40%|████      | 2/5 [00:48<01:12, 24.14s/it]Evaluating:  60%|██████    | 3/5 [01:11<00:47, 23.82s/it]Evaluating:  80%|████████  | 4/5 [01:34<00:23, 23.52s/it]Evaluating: 100%|██████████| 5/5 [01:58<00:00, 23.68s/it]Evaluating: 100%|██████████| 5/5 [01:58<00:00, 23.73s/it]
+Traceback (most recent call last):
+  File "/gpfs/home/amkjy2545/ai/PyProjects/RoMa/eval_roma_vs_romav2.py", line 101, in run_comparison
+    raise FileNotFoundError(f"RoMaV2 path not found: {romav2_path}")
+FileNotFoundError: RoMaV2 path not found: /gpfs/home/amkjy2545/ai/PyProjects/RoMa/../RoMaV2/src
+
+Debug: Image coreg_00001_K3A_20250707224718_56869_00028144_L1G_12288_5120_1024_1024.png
+  Image Size A: 1024x1024, B: 1024x1024
+  Number of keypoints: 10
+  Direct Mean Error: 7.49px
+  Direct Median Error: 8.13px
+
+  First 5 GT matches (A -> B):
+    A(830.9, 676.9) -> GT B(913.4, 640.5)
+                                -> Pred B(912.3, 639.1)
+                                   Error: 1.72px
+    A(789.8, 861.5) -> GT B(867.5, 813.0)
+                                -> Pred B(869.3, 818.1)
+                                   Error: 5.34px
+    A(442.0, 958.7) -> GT B(526.0, 916.7)
+                                -> Pred B(528.1, 925.1)
+                                   Error: 8.64px
+    A(570.8, 811.1) -> GT B(662.5, 770.4)
+                                -> Pred B(658.2, 782.1)
+                                   Error: 12.55px
+    A(83.6, 990.9) -> GT B(168.2, 959.5)
+                                -> Pred B(168.8, 956.8)
+                                   Error: 2.77px
+Saved debug visualization to debug_match_vis.png
+
+============================================================
+NeonSAT Benchmark Results
+============================================================
+Total pairs evaluated: 5
+Total keypoints: 49
+
+Error Statistics:
+  Mean Error: 4.38px
+  Median Error: 3.07px
+  Std Error: 3.79px
+
+PCK (Percentage of Correct Keypoints):
+  [ ] PCK@1px: 20.22%
+  [ ] PCK@3px: 46.44%
+  [ ] PCK@5px: 65.33%
+  [ ] PCK@10px: 87.56%
+  [✓] PCK@20px: 100.00%
+
+Satellite Image Metrics (relaxed thresholds):
+  PCK@10px: 87.56%
+  PCK@20px: 100.00%
+
+============================================================
+Accuracy Target Check (>= 90%)
+============================================================
+  ✓ PCK@20px >= 90%: 100.00%
+============================================================
+
+======================================================================
+2. RoMaV2 (Next Generation)
+======================================================================
+Error with RoMaV2: RoMaV2 path not found: /gpfs/home/amkjy2545/ai/PyProjects/RoMa/../RoMaV2/src
+
+======================================================================
+Comparison: RoMa vs RoMaV2
+======================================================================
+One or both models failed. Check errors above.
+
+Results saved to: data_neonsat/comparison_roma_vs_romav2_20251203_171029.json

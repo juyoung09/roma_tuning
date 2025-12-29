@@ -1,0 +1,18 @@
+2025-12-03 17:17:05.761 | INFO     | romatch.models.model_zoo.roma_models:roma_model:67 - Using coarse resolution (560, 560), and upsample res (864, 864)
+Device: cuda
+Data directory: data_neonsat
+======================================================================
+
+======================================================================
+1. RoMa (Original - DINOv2 based)
+======================================================================
+Loading RoMa model...
+Model loaded in 7.71s
+
+Running benchmark...
+Found 702 image pairs.
+Limiting to first 5 pairs.
+Evaluating:   0%|          | 0/5 [00:00<?, ?it/s]Evaluating:  20%|██        | 1/5 [00:06<00:24,  6.23s/it]Evaluating:  40%|████      | 2/5 [00:06<00:08,  2.86s/it]Evaluating:  60%|██████    | 3/5 [00:07<00:03,  1.78s/it]Evaluating:  80%|████████  | 4/5 [00:07<00:01,  1.26s/it]Evaluating: 100%|██████████| 5/5 [00:08<00:00,  1.01s/it]Evaluating: 100%|██████████| 5/5 [00:08<00:00,  1.65s/it]
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+srun: error: wittgenstein: task 0: Aborted (core dumped)
